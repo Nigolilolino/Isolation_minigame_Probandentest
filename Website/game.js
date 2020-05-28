@@ -131,32 +131,43 @@ function distributeSIgnals(_btn){
           console.log("Error");
       }
 
+      checkForWin();
+
+}
+
+function checkForWin(){
+    var allActivatedLights = document.getElementsByClassName("lightOn");
+    var allLights = document.getElementsByClassName("light");
+
+        if(allLights.length == allActivatedLights.length){
+            alert("The waterflow has been changed");
+        }
 }
 
 function changeLight(_firstLight, _secondLight, _thirdLight, _fourthLight){
     if(_firstLight.getAttribute("data-activated") == "false"){
-        _firstLight.className = "lightOn";
+        _firstLight.className = "light lightOn";
         _firstLight.setAttribute("data-activated", "true");
     } else {
-        _firstLight.className = "lightOff";
+        _firstLight.className = "light lightOff";
         _firstLight.setAttribute("data-activated", "false");
     }
 
     if(_secondLight.getAttribute("data-activated") == "false"){
-        _secondLight.className = "lightOn";
+        _secondLight.className = "light lightOn";
         _secondLight.setAttribute("data-activated", "true");
     } else {
-        _secondLight.className = "lightOff";
+        _secondLight.className = "light lightOff";
         _secondLight.setAttribute("data-activated", "false");
     }
 
     if(typeof _thirdLight === 'undefined'){
     } else {
         if(_thirdLight.getAttribute("data-activated") == "false"){
-            _thirdLight.className = "lightOn";
+            _thirdLight.className = "light lightOn";
             _thirdLight.setAttribute("data-activated", "true");
         } else {
-            _thirdLight.className = "lightOff";
+            _thirdLight.className = "light lightOff";
             _thirdLight.setAttribute("data-activated", "false");
         }
     }
@@ -164,10 +175,10 @@ function changeLight(_firstLight, _secondLight, _thirdLight, _fourthLight){
     if(typeof _fourthLight === 'undefined'){
     } else {
         if(_fourthLight.getAttribute("data-activated") == "false"){
-            _fourthLight.className = "lightOn";
+            _fourthLight.className = "light lightOn";
             _fourthLight.setAttribute("data-activated", "true");
         } else {
-            _fourthLight.className = "lightOff";
+            _fourthLight.className = "light lightOff";
             _fourthLight.setAttribute("data-activated", "false");
         }
     }
